@@ -23,9 +23,9 @@ export default function EfficiencyCalculator({ t }: Props) {
     setError("");
     setResult("");
 
-    const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+    const apiKey = import.meta.env.VITE_CLAUDE_API_KEY;
     if (!apiKey) {
-      setError("VITE_GEMINI_API_KEY not set. Add it to your .env file.");
+      setError("VITE_CLAUDE_API_KEY not set. Add it to your .env file.");
       setLoading(false);
       return;
     }
