@@ -5,8 +5,8 @@ export default function CustomCursor() {
   const mouseX = useMotionValue(-100);
   const mouseY = useMotionValue(-100);
 
-  const springX = useSpring(mouseX, { stiffness: 500, damping: 40 });
-  const springY = useSpring(mouseY, { stiffness: 500, damping: 40 });
+  const springX = useSpring(mouseX, { stiffness: 1200, damping: 50 });
+  const springY = useSpring(mouseY, { stiffness: 1200, damping: 50 });
 
   useEffect(() => {
     const move = (e: MouseEvent) => {
@@ -36,25 +36,6 @@ export default function CustomCursor() {
             borderRadius: "50%",
             border: "1px solid rgba(93, 248, 216, 0.6)",
             boxShadow: "0 0 12px rgba(93, 248, 216, 0.3)",
-          }}
-        />
-      </motion.div>
-      {/* Inner dot */}
-      <motion.div
-        className="fixed top-0 left-0 z-[9999] pointer-events-none"
-        style={{
-          x: mouseX,
-          y: mouseY,
-          translateX: "-50%",
-          translateY: "-50%",
-        }}
-      >
-        <div
-          style={{
-            width: 5,
-            height: 5,
-            borderRadius: "50%",
-            background: "#5DF8D8",
           }}
         />
       </motion.div>
